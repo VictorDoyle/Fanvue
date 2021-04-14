@@ -48,6 +48,7 @@ function NavigationBar() {
                 />
             </Link>
 
+            <Menu.Item position='right' >
             <Link to={'/logout'}>
                 <Menu.Item
                     name='logout'
@@ -55,6 +56,7 @@ function NavigationBar() {
                     onClick={handleLogout}
                 />
             </Link>
+            </Menu.Item>
         </Menu>
       </Segment>
     )

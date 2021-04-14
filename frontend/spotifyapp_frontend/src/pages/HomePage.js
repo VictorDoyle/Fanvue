@@ -32,7 +32,7 @@ function HomePage() {
         <>
 
            {/* customized welcome for users */}
-           <IntroHeader />
+           <IntroHeader {...currentUser} />
 
             {/* User selection Cards */}
             <HeroBanner />
