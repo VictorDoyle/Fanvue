@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Nav from '../components/Nav';
 import LoginForm from '../components/LoginForm';
 import SignupForm from '../components/SignupForm';
-
+import Cookies from 'js-cookie';
 
 class LandingPage extends Component {
   constructor(props) {
@@ -13,6 +13,8 @@ class LandingPage extends Component {
       username: ''
     };
   }
+
+  
   
 
   componentDidMount() {
@@ -25,7 +27,7 @@ class LandingPage extends Component {
         .then(res => res.json())
         .then(json => {
           this.setState({ username: json.username });
-          console.log(json.id, "currentUser Id -- use for profile page url")
+          console.log(json, "currentUser Id -- use for profile page url")
         });
     }
   }
@@ -82,6 +84,8 @@ class LandingPage extends Component {
   };
 
   render() {
+    Cookies.set('mainCookie', localStorage.getItem('token') , { expires: 7 });
+
     let form;
     switch (this.state.displayed_form) {
       case 'login':

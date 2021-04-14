@@ -1,28 +1,34 @@
 import React, {useState, useEffect} from 'react';
-import UserModel from '../models/users';
-
+import HeroBanner from '../components/HeroBanner/HeroBanner';
+import IntroHeader from '../components/IntroHeader/IntroHeader';
+import Cookies from 'js-cookie';
 
 function HomePage() {
 
-    const [ user, setUser] = useState()
+    /* set sessionId for auth */
+    Cookies.set('mainCookie', Cookies.get("sessionid"), { expires: 7 });
 
+
+   
+ 
     useEffect(() => {
-        fetchUser();
+        
     }, [])
 
-    const fetchUser = () => {
-        UserModel.getUser().then(json => {
-            setUser(json)
-        })
-    }
+  
+   
 
-    console.log("USER", user)
+
 
     return(
         <>
-        add hero banner here
+           {/* customized welcome for users */}
+           <IntroHeader />
 
+            {/* User selection Cards */}
+            <HeroBanner />
 
+        
         
        
         

@@ -50,6 +50,18 @@ INSTALLED_APPS = [
 # ALL AUTH
 SITE_ID = 1
 
+SOCIALACCOUNT_PROVIDERS = {
+    'google': {
+        'SCOPE': [
+            'profile',
+            'email',
+        ],
+        'AUTH_PARAMS': {
+            'access_type': 'online',
+        }
+    }
+}
+
 #Django Rest Framework Settings
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': (
@@ -64,12 +76,13 @@ REST_FRAMEWORK = {
 
 # CORS Settings
 CORS_ORIGIN_WHITELIST = (
+
     'http://localhost:3000',
-    'https://localhost:3000',
 )
 
 # Login/Logout Redirect urls
-LOGIN_REDIRECT_URL = 'http://localhost:3000/'
+LOGIN_REDIRECT_URL = 'http://localhost:3000/home/'
+
 LOGOUT_REDIRECT_URL = 'http://127.0.0.1:8000/accounts/login/'
 
 # Custom JWT Auth Handler

@@ -10,7 +10,7 @@ class AlbumModel {
           method: "GET",
           headers: {
             'Content-Type': 'application/json',
-           /* add token dynamically here */
+           
           }
         }).then(res => res.json())
         .catch( error => console.log(error))

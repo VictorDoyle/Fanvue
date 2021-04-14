@@ -1,5 +1,5 @@
 /* API call to Django Backend */
-const API = 'http://127.0.0.1:8000/api/genres/'
+const API = 'http://localhost:8000/api/genres/'
 
 
 
@@ -10,7 +10,7 @@ class GenreModel {
           method: "GET",
           headers: {
             'Content-Type': 'application/json',
-       /*  'Authorization': JWT */
+            credentials: 'include',
           }
         }).then(res => res.json())
         .catch( error => console.log(error))
