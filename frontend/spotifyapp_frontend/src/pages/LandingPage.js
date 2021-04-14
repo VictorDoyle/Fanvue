@@ -47,7 +47,8 @@ class LandingPage extends Component {
         this.setState({
           logged_in: true,
           displayed_form: '',
-          username: json.user.username
+          /* FIXME: update on submit */
+          username: json.username
         });
       });
   };
