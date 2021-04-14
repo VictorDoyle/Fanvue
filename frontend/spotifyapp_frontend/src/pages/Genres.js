@@ -40,9 +40,9 @@ function Genres() {
      });
 }
 
-    function handleGenreDelete(event) {
+    function handleGenreDelete(event, id) {
         event.preventDefault();
-        GenreModel.deleteGenre({ title: nameOfGenre, description: genreDescription}).then(json => {
+        GenreModel.deleteGenre({ id, title: nameOfGenre, description: genreDescription}).then(json => {
             if (json.status === 201) {
                 console.log("success at deleting genre", json);
               } else {
@@ -116,7 +116,7 @@ function Genres() {
                 <Card.Content extra>
                 
                     <Icon name="eye" onClick={seeGenre}/>
-                    <Icon name="cancel" onClick={(event) => {handleGenreDelete(event)}}/>
+                    <Icon name="cancel" onClick={(event) => {handleGenreDelete(event, genre.id)}}/>
                   
                   
                 
