@@ -72,6 +72,11 @@ CORS_ORIGIN_WHITELIST = (
 LOGIN_REDIRECT_URL = 'http://localhost:3000/'
 LOGOUT_REDIRECT_URL = 'http://127.0.0.1:8000/accounts/login/'
 
+# Custom JWT Auth Handler
+JWT_AUTH = {
+    'JWT_RESPONSE_PAYLOAD_HANDLER': 'spotify_api.utils.jwt_res_handler'
+}
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
