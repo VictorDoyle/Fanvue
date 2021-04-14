@@ -8,6 +8,11 @@ function NavigationBar() {
   
   const handleItemClick = (e, { name }) => setActiveItem( name )
 
+
+  /* delete JWT on logout */
+  let handleLogout = () => {
+    localStorage.removeItem('token');
+  };
     return (
       <Segment inverted className="navigationMainContainer">
         <Menu inverted secondary >
@@ -40,6 +45,14 @@ function NavigationBar() {
                     name='genres'
                     active={activeItem === 'genres'}
                     onClick={handleItemClick}
+                />
+            </Link>
+
+            <Link to={'/logout'}>
+                <Menu.Item
+                    name='logout'
+                    active={activeItem === 'logout'}
+                    onClick={handleLogout}
                 />
             </Link>
         </Menu>

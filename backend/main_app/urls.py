@@ -15,7 +15,7 @@ router.register('users', UserViewSet)
 urlpatterns = [
     path('', include(router.urls)),
     ## current_user out of router due to baseName/querySet requirement
-    # path('current_user/', current_user),
+    path('current_user/', current_user),
 ]
 
 
