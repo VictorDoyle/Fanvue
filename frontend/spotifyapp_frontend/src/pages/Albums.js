@@ -30,16 +30,17 @@ function Albums() {
         console.log("show Songs in Album")
     }
 
-    
+
 
     return ( 
         <>
-        <h1>Albums </h1> 
+        <h1 style={{textAlign: "center"}}>Albums </h1> 
+        <div className="mainCardContainer">
 
 
-        { albums.length > 0 ? albums.map((album, index) => {
+        { albums ? albums.map((album, index) => {
    return  <> 
-            <Card>
+            <Card className="mainCardItems">
                 <Image src={album.album_image} wrapped ui={false} />
                 <Card.Content>
                 <Card.Header>{album.title}</Card.Header>
@@ -65,7 +66,7 @@ function Albums() {
    
    
     </> }) : <h1 className="errorNewsPost"> There seems to be an error! <br/> We'll be right with you </h1> } 
-  
+  </div>
         </>
     )
 }

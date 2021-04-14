@@ -1,6 +1,5 @@
 .mainBannerContainer {
     width: 100%;
-    background-color: aquamarine;
     height: 60vh;
     display: grid;
     grid-template-columns: 33% 33% 33%;
@@ -19,6 +18,7 @@
      /* override semantic ui first child style */
     margin-top: 15px !important;
 }
+
 
 .albumCard {
     grid-area: albumCard;

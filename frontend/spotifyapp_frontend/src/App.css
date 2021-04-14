@@ -3,7 +3,9 @@
 }
 
 body {
-  background-color: whitesmoke !important;
+/*   background-color: whitesmoke !important; */
+  background:linear-gradient(120deg, #1db954, #191414) !important;
+  color: whitesmoke !important;
 }
 
 .App-logo {

@@ -35,11 +35,14 @@ function Artists() {
     return ( 
         <>
         
-        <h1>Your Artists </h1> 
+        <h1 style={{textAlign: "center"}}>Your Artists </h1> 
+        <div className="mainCardContainer">
+
+       
 
         { artists.length > 0 ? artists.map((artist, index) => {
    return  <> 
-            <Card>
+            <Card className="mainCardItems">
                 <Image src={artist.artist_image} wrapped ui={false} />
                 <Card.Content>
                 <Card.Header>{artist.name_of_artist}</Card.Header>
@@ -66,7 +69,7 @@ function Artists() {
    
     </> }) : <h1 className="errorNewsPost"> There seems to be an error! <br/> We'll be right with you </h1> } 
   
-
+    </div>
         </>
     )
 }
