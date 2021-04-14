@@ -10,7 +10,7 @@ class AlbumModel {
           method: "GET",
           headers: {
             'Content-Type': 'application/json',
-           
+            Authorization: `JWT ${localStorage.getItem('token')}`
           }
         }).then(res => res.json())
         .catch( error => console.log(error))

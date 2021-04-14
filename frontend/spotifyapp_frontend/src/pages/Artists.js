@@ -18,6 +18,12 @@ function Artists() {
     /* log the return of fetch */
     console.log(artists)
 
+  /*   let artistList = artists.map((artist) => {
+        return <>
+
+        </>
+    }) */
+
 
 
 

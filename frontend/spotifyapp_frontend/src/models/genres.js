@@ -2,7 +2,6 @@
 const API = 'http://localhost:8000/api/genres/'
 
 
-
 class GenreModel {
 
     static allGenres = () => {
@@ -10,9 +9,11 @@ class GenreModel {
           method: "GET",
           headers: {
             'Content-Type': 'application/json',
-            credentials: 'include',
+            Authorization: `JWT ${localStorage.getItem('token')}`
           }
         }).then(res => res.json())
+       
+        
         .catch( error => console.log(error))
       }
 

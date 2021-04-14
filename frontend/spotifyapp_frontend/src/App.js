@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import './App.css';
+import NavigationBar from './components/NavigationBar/NavigationBar';
 import routes from './config/routes'
 
 
@@ -32,6 +33,7 @@ function App() {
 
   return (
     <>
+    <NavigationBar />
     {/* pages included in routes */}
     {routes}
 

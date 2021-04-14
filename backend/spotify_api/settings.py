@@ -72,13 +72,18 @@ REST_FRAMEWORK = {
         'rest_framework.authentication.SessionAuthentication',
         'rest_framework.authentication.BasicAuthentication',
     ),
-}
+} 
 
 # CORS Settings
 CORS_ORIGIN_WHITELIST = (
-
     'http://localhost:3000',
+    'https://localhost:3000',
+    'http://127.0.0.1:8000',
+    'https://127.0.0.1:8000',
 )
+
+
+CORS_ALLOW_CREDENTIALS = True
 
 # Login/Logout Redirect urls
 LOGIN_REDIRECT_URL = 'http://localhost:3000/home/'
@@ -86,9 +91,9 @@ LOGIN_REDIRECT_URL = 'http://localhost:3000/home/'
 LOGOUT_REDIRECT_URL = 'http://127.0.0.1:8000/accounts/login/'
 
 # Custom JWT Auth Handler
-JWT_AUTH = {
-    'JWT_RESPONSE_PAYLOAD_HANDLER': 'spotify_api.utils.jwt_res_handler'
-}
+#JWT_AUTH = {
+ #   'JWT_RESPONSE_PAYLOAD_HANDLER': 'spotify_api.utils.jwt_res_handler'
+#}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
